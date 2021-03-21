@@ -1,0 +1,29 @@
+dataset:
+  nuscenes:
+    name: nuscenes
+    version: v1.0-trainval
+    path: '../dataset/nuscenes'
+    test_version: v1.0-mini
+    test_path: '../dataset/nuscenes/v1.0-mini/'
+    split: 0.8
+    batch_size: 64
+    load: True
+  cadc:
+    name: cadc
+    path: '../dataset/cadcd/2019_02_27'
+    block: ['0002','0003','0004','0005','0006','0008','0009',
+            '0010','0011','0013','0015','0016','0018','0019',
+            '0020','0022','0024','0025','0027','0028',
+            '0030','0031','0033','0034','0035','0037','0039',
+            '0040','0041','0043','0044','0045','0046','0047','0049',
+            '0050','0051','0054','0055','0056','0058','0059',
+            '0060','0061','0063','0065','0066','0068','0070',
+            '0072','0073','0075','0076','0078','0079',
+            '0080','0082']
+    cam_pos: '/image_00'
+    lidar_pos: '/lidar_points'
+    split: 0.6
+    batch_size: 64
+    load: False
+training: True
+mode: [adaptive, concatenate, add, multiply] # concatenate, add, multiply, adaptive
